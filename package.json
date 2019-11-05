@@ -1,0 +1,32 @@
+{
+  "name": "2919-buttler",
+  "version": "1.0.0",
+  "description": "a Discord Bot to post the \"speiseplaene\" of the \"SRH Neckargemunde\"mensa and other usful thing for class 2919",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DvTox",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0",
+    "fetch": "^1.1.0",
+    "moment": "^2.24.0",
+    "node-fetch": "^2.6.0",
+    "wait.for-es6": "^0.1.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DvTox/2919_Buttler-DiscordBot-.git"
+  },
+  "keywords": [
+    "DiscordBot",
+    "2919Buttler"
+  ],
+  "bugs": {
+    "url": "https://github.com/DvTox/2919_Buttler-DiscordBot-/issues"
+  },
+  "homepage": "https://github.com/DvTox/2919_Buttler-DiscordBot-#readme"
+}
