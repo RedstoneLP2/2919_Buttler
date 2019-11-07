@@ -1,6 +1,6 @@
 const discord = require ('discord.js');
 const dotenv = require('dotenv').config({ path:'config/env/.env'});
-const food = require('./modules/foodtst.js');
+const food = require('./modules/foodstuff.js');
 const HW = require('./modules/HW.js');
 
 
