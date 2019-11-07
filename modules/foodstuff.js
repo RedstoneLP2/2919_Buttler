@@ -51,7 +51,7 @@ function foodProcessing(rawfood,modeselec){
 
             if (datearr.indexOf(foodTime) > -1){
 
-                menu.push(rawfood[x].gerichtname);
+                menu.push(`${foodTime}|${rawfood[x].gerichtname}`);
             }
         }
     }else if(modeselec == '2'){
@@ -59,7 +59,7 @@ function foodProcessing(rawfood,modeselec){
                 menu = [];
         for (let x in rawfood){
 
-            menu.push(rawfood[x].gerichtname);
+            menu.push(`${foodTime}|${rawfood[x].gerichtname}`);
         }
     }else{
         menu = 'No food Found'
