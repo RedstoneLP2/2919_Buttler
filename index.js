@@ -50,8 +50,8 @@ bot.on('message', msg => {
 
         case('echo'):
 
-        msg.channel.send(args[1]);
-        console.log(args[1]);
+        msg.channel.send(args);
+        console.log(args);
         break;
     };
 
