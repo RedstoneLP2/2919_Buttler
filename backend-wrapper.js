@@ -1,4 +1,4 @@
-const food = require('./modules/foodtst.js');
+const food = require('./modules/foodstuff.js');
 const HW = require('./modules/HW.js');
 
 let args = process.argv;

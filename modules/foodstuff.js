@@ -45,6 +45,7 @@ function foodProcessing(rawfood,modeselec){
             now.setDate(now.getDate() +1);
         }
 
+        let foodDay = 0;
         for (let x in rawfood){
 
             let foodTime = rawfood[x].datum.slice(0,10);
@@ -52,7 +53,19 @@ function foodProcessing(rawfood,modeselec){
             if (datearr.indexOf(foodTime) > -1){
 
                 menu.push(`${foodTime}|${rawfood[x].gerichtname}`);
+                
+
+                //Dash per day
+                foodDay=foodDay+1;
+                console.log(foodDay);
+                if (foodDay==3){
+                	foodDay=0;
+                	menu.push(`----------------------------------------------`);
+                }
+                let prevFoodTime = foodTime;
+                // /Dash per day
             }
+
         }
     }else if(modeselec == '2'){
 
