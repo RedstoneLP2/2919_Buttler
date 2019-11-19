@@ -92,9 +92,15 @@ exports.sendforfood = async function(modeselec){
         }
     }
     let res = await fetch(url,options);
-    let rawfood = await res.json();
-    // let rawfood = await JSON.parse(res);
+    
+    if (res.status!=200){
+        return ["HTTP STATUS CODE "+res.status];
+    }
 
+    let rawfood = await res.json();
+
+    // let rawfood = await JSON.parse(res);
+    console.log(res.status==200);
     //console.log(rawfood);
     await foodProcessing(rawfood,modeselec);
     return menu;
