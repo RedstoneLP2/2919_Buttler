@@ -57,7 +57,7 @@ function foodProcessing(rawfood,modeselec){
 
                 //Dash per day
                 foodDay=foodDay+1;
-                console.log(foodDay);
+                //console.log(foodDay);
                 if (foodDay==3){
                 	foodDay=0;
                 	menu.push(`----------------------------------------------`);
