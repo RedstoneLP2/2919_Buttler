@@ -53,6 +53,7 @@ function foodProcessing(rawfood,modeselec){
             if (datearr.indexOf(foodTime) > -1){
 
                 menu.push(`${foodTime}|${rawfood[x].gerichtname}`);
+
             }
 
         }
