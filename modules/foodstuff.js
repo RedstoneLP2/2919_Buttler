@@ -92,7 +92,7 @@ function foodProcessing(rawfood,modeselec){
         })
                     
                             //Dash per day
-                for (let n = 3; n<=menu.length;n+=4){    
+                for (let n = 3; n<menu.length;n+=4){    
                     console.log("test2")
                     menu.splice(n,0,`----------------------------------------------`);
                 }
