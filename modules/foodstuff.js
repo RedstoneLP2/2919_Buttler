@@ -23,7 +23,7 @@ function foodProcessing(rawfood,modeselec){
 
             if (foodTime == now_jso){
 
-                menu.push(rawfood[x].gerichtname);
+                menu.push(rawfood[x].gerichtname.trim());
             }
         }
     }else if(modeselec == '1'){
@@ -52,7 +52,7 @@ function foodProcessing(rawfood,modeselec){
 
             if (datearr.indexOf(foodTime) > -1){
 
-                menu.push(`${foodTime}|${rawfood[x].gerichtname}`);
+                menu.push(`${foodTime}|${rawfood[x].gerichtname.trim()}`);
 
             }
 
@@ -81,7 +81,7 @@ function foodProcessing(rawfood,modeselec){
         menu = [];
             for (let x in rawfood){
                 let foodTime = rawfood[x].datum.slice(0,10);
-                menu.push(`${foodTime}|${rawfood[x].gerichtname}`);
+                menu.push(`${foodTime}|${rawfood[x].gerichtname.trim()}`);
             }
             menu = menu.sort(function(a,b){
             
