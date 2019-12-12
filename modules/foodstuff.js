@@ -15,7 +15,7 @@ function foodProcessing(rawfood,modeselec){
 
     if(modeselec == '0' || modeselec == 'udf'){
 
-                console.log('got here');
+                //console.log('got here');
         menu = [];
         for (let x in rawfood){
 
@@ -23,12 +23,12 @@ function foodProcessing(rawfood,modeselec){
 
             if (foodTime == now_jso){
 
-                menu.push(rawfood[x].gerichtname);
+                menu.push(rawfood[x].gerichtname.trim());
             }
         }
     }else if(modeselec == '1'){
 
-                menu = [];
+        menu = [];
         let datearr = [];
 
         while(now.getDay() > 1){
@@ -52,28 +52,52 @@ function foodProcessing(rawfood,modeselec){
 
             if (datearr.indexOf(foodTime) > -1){
 
-                menu.push(`${foodTime}|${rawfood[x].gerichtname}`);
-                
+                menu.push(`${foodTime}|${rawfood[x].gerichtname.trim()}`);
 
-                //Dash per day
-                foodDay=foodDay+1;
-                console.log(foodDay);
-                if (foodDay==3){
-                	foodDay=0;
-                	menu.push(`----------------------------------------------`);
-                }
-                let prevFoodTime = foodTime;
-                // /Dash per day
             }
 
         }
+        menu = menu.sort(function(a,b){
+            
+            aDate=Date.parse(a.split('|')[0]);
+            
+            bDate=Date.parse(b.split('|')[0]);
+
+            return aDate-bDate;
+        })
+        console.log(menu.length)
+
+            //Dash per day
+            let menuLength=menu.length;
+            for (let n = 3; n<=menuLength;n+=4){    
+                console.log(n)
+                menu.splice(n,0,`----------------------------------------------`);
+            }
+            console.log("after for")
+            // /Dash per day
+
     }else if(modeselec == '2'){
+    	let foodDay = 0;
+        menu = [];
+            for (let x in rawfood){
+                let foodTime = rawfood[x].datum.slice(0,10);
+                menu.push(`${foodTime}|${rawfood[x].gerichtname.trim()}`);
+            }
+            menu = menu.sort(function(a,b){
+            
+            aDate=Date.parse(a.split('|')[0]);
+            
+            bDate=Date.parse(b.split('|')[0]);
 
-                menu = [];
-        for (let x in rawfood){
-
-            menu.push(`${foodTime}|${rawfood[x].gerichtname}`);
-        }
+            return aDate-bDate;
+        })
+                    
+                            //Dash per day
+                for (let n = 3; n<menu.length;n+=4){    
+                    console.log("test2")
+                    menu.splice(n,0,`----------------------------------------------`);
+                }
+                // /Dash per day
     }else{
         menu = 'No food Found'
     }
@@ -100,8 +124,8 @@ exports.sendforfood = async function(modeselec){
     let rawfood = await res.json();
 
     // let rawfood = await JSON.parse(res);
-    console.log(res.status==200);
-    //console.log(rawfood);
+    // console.log(res.status==200);
+    // console.log(rawfood);
     await foodProcessing(rawfood,modeselec);
     return menu;
 };
