@@ -36,15 +36,15 @@ bot.on('message', msg => {
                	let sfood = await food.sendforfood(modeselec);
                 console.log(sfood);
                 if(sfood != []){
-			if(modeselec == 2){
-			sfoodIndex = sfood.getAllIndexes(sfood, `-----------------------------------------------`)
+			         if(modeselec == 2){
+                        console.log(sfood)
+			            sfoodIndex = getAllIndexes(sfood, `-----------------------------------------------`)
             
-            for (i=0;i-1<sfoodIndex.length;i++){
-                temparray = array.slice(sfoodIndex[i],sfoodIndex[i+1]);
-                msg.channel.send(temparray);
-            }
-            
-                    msg.channel.send(sfood);
+                        for (i=0;i-1<sfoodIndex.length;i++){
+                            temparray = sfood.slice(sfoodIndex[i-1],sfoodIndex[i]);
+                            msg.channel.send(temparray);
+                        }
+
                     }else{msg.channel.send(sfood);}
                     console.log(`sending food ......`);
                 } else{
