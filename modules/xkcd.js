@@ -7,12 +7,14 @@ exports.getXKCD = async function(curr, num){
 	if (curr) {
 		xkcdRes = await fetch('https://xkcd.com/info.0.json')
 		if (xkcdRes.status!=200){
-			console.log("Non 200 status	code"+xkcdRes.status);
+			console.log("Non 200 status code: "+xkcdRes.status);
+			return "ERROR";
 		}
 	}else{
 		xkcdRes = await fetch('https://xkcd.com/'+num+'/info.0.json')
 		if (xkcdRes.status!=200){
-			console.log("Non 200 status	code"+xkcdRes.status);
+			console.log("Non 200 status code: "+xkcdRes.status);
+			return "ERROR";
 		}
 	}
 	xkcdJSON = await xkcdRes.json();

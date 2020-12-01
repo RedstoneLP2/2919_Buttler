@@ -97,11 +97,18 @@ bot.on('message', msg => {
             }else if(args[1]){
                  xkcdJSON = await xkcd.getXKCD(false, args[1]);
             }
-                let xkcdans = new discord.MessageEmbed()
-                    .setTitle(xkcdJSON.safe_title)
-                    .setURL("https://xkcd.com/"+xkcdJSON.num)
-                    .setImage(xkcdJSON.img)
-                    .setDescription(xkcdJSON.alt);
+            if (xkcdJSON == "ERROR"){
+                msg.channel.send("Sorry Can't find!")
+                return;
+            }
+
+
+            let xkcdans = new discord.MessageEmbed()
+                .setTitle(xkcdJSON.safe_title)
+                .setURL("https://xkcd.com/"+xkcdJSON.num)
+                .setImage(xkcdJSON.img)
+                .setDescription(xkcdJSON.alt);
+            
             msg.channel.send(xkcdans);
              };
              XKCD(args)
