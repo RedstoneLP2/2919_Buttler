@@ -97,7 +97,6 @@ bot.on('message', msg => {
             }else if(args[1]){
                  xkcdJSON = await xkcd.getXKCD(false, args[1]);
             }
-                console.log(xkcdJSON); //undefined
                 let xkcdans = new discord.MessageEmbed()
                     .setTitle(xkcdJSON.safe_title)
                     .setURL("https://xkcd.com/"+xkcdJSON.num)

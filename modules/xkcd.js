@@ -10,7 +10,6 @@ exports.getXKCD = async function(curr, num){
 			console.log("Non 200 status	code"+xkcdRes.status);
 		}
 	}else{
-		console.log(num)
 		xkcdRes = await fetch('https://xkcd.com/'+num+'/info.0.json')
 		if (xkcdRes.status!=200){
 			console.log("Non 200 status	code"+xkcdRes.status);
