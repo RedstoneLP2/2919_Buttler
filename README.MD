@@ -6,3 +6,13 @@
 2. `npm i`
 3. Configure
 4. Run
+
+## Configuration
+
+* config/env/.env
+
+```
+ url = '<FOODAPI URL>'
+ authtoken = <FOODAPI AUTH>
+ TOKEN = "<DISCORD BOT TOKEN>"
+```
