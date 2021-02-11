@@ -2,7 +2,8 @@ const discord = require ('discord.js');
 const dotenv = require('dotenv').config({ path:'config/env/.env'});
 const food = require('./modules/foodstuff.js');
 const HW = require('./modules/HW.js');
-const plan = require('./modules/plan.js');
+//const plan = require('./modules/plan.js');
+const plan = null;
 const xkcd = require('./modules/xkcd.js');
 
 function getAllIndexes(arr, val) {
