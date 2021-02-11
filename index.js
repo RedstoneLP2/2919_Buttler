@@ -26,7 +26,7 @@ bot.on('ready', () =>{
 })
 
 bot.on('message', msg => {
-    if (!msg.content.startsWith(prefix)) return;
+    if (!msg.content.startsWith(Prefix)) return;
 
     let args = msg.content.substring(Prefix.length).split(" ");
 
